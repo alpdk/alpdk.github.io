@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Угадай число</title>
+  </head>
+  <body>
+    <p>Нажми на кнопку, и я скажу, какое число ты загодал от 0 до 100!(За несколько вопросов)</p>
+    <button onclick = "action()">Начать игру</button>
+    <script type = "text/javascript">
+      function action()
+      {
+          var A = 1, B = 100, M = Math.floor((A + B) / 2);;
+          while(A != B)
+          {
+            if (confirm("Ваше число меньше " + M + "?"))
+            {
+                B = M - 1;
+                M = Math.floor((A + B) / 2);
+            }
+            else
+            {
+                A = M;
+                M = Math.ceil((A + B) / 2);
+            }
+          } 
+          confirm("Ваше число " + A + ".")
+      }
+    </script>
+  </body>
+</html>
