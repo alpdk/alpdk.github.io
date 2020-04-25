@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Таблица умножения</title>
+  </head>
+  <body>
+    <label>A:</label>
+    <input type = 'number' id = 'A'>
+    <label>B:</label>
+    <input type = 'number' id = 'B'>
+    <button onclick='action()'>Нажми меня.</button>
+    <table id = 'mytable' border = '1px' cellspacing = '0'></table>
+    <script type = "text/javascript">
+        function action()
+        {
+            var A = document.getElementById('A');
+            var B = document.getElementById('B');
+            var t = document.getElementById('mytable');
+            t.innerHTML = '';
+            for (var i = 1; i < parseInt(B.value) + 1; i++)
+            {
+              var tr = document.createElement('tr');
+              for (var j = 1; j < parseInt(A.value) + 1; j++)
+              {
+                  td = document.createElement('td');
+                  td.innerHTML = i * j;
+                  tr.appendChild(td);
+              }
+              t.appendChild(tr);
+            }
+        }
+      </script>
+  </body>
+</html>
